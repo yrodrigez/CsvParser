@@ -1,0 +1,42 @@
+#accis-file-drop-area {
+    padding: 25px;
+    border: 2px dashed darkslategray;
+    text-align: center;
+}
+
+#accis-file-drop-container{
+    padding: 5px;
+    border: 1px solid lightgray;
+}
+
+input[type=file] {
+    padding: 25px;
+    border: 2px dashed darkslategray;
+    text-align: center;
+}
+
+#spinner {
+    width: 80px;
+    height: 80px;
+    background-image: url(./sprite.png);
+    background-position: 0 0;
+}
+
+#accis-file-load-progress-bar.active {
+    height: .2em;
+    width: 0;
+    background: rgba(248,80,50,1);
+    background: -moz-linear-gradient(left, rgba(248,80,50,1) 0%, rgba(246,41,12,1) 0%, rgba(240,47,23,1) 59%, rgba(247,194,180,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(248,80,50,1)), color-stop(0%, rgba(246,41,12,1)), color-stop(59%, rgba(240,47,23,1)), color-stop(100%, rgba(247,194,180,1)));
+    background: -webkit-linear-gradient(left, rgba(248,80,50,1) 0%, rgba(246,41,12,1) 0%, rgba(240,47,23,1) 59%, rgba(247,194,180,1) 100%);
+    background: -o-linear-gradient(left, rgba(248,80,50,1) 0%, rgba(246,41,12,1) 0%, rgba(240,47,23,1) 59%, rgba(247,194,180,1) 100%);
+    background: -ms-linear-gradient(left, rgba(248,80,50,1) 0%, rgba(246,41,12,1) 0%, rgba(240,47,23,1) 59%, rgba(247,194,180,1) 100%);
+    background: linear-gradient(to right, rgba(248,80,50,1) 0%, rgba(246,41,12,1) 0%, rgba(240,47,23,1) 59%, rgba(247,194,180,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f85032', endColorstr='#f7c2b4', GradientType=1 );
+}
+
+#accis-file-load-progress-bar.inactive {
+    height: .2em;
+    width: 0;
+    background: #F6290C;
+}

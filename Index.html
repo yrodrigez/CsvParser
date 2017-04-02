@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="spritely-0.6.8/src/jquery.spritely.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div id="accis-file-drop-container" class="col-xs-6 col-xs-offset-3">
+            <div id="accis-file-drop-area" onclick="jQuery('input').click();" ondragover="handleDragOver(event)" ondrop="handleFileSelect(event)" >
+                Drop csv file here
+            </div>
+            <div id="accis-file-load-progress-bar" class="finished"></div>
+            <div class="col-xs-12">
+                <input type="file" class="col-xs-12" ondragover="handleDragOver(event)" ondrop="this.onchange(event)" onchange="handleFileSelect(event)" id="file-input" hidden>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="FileSelectHandler.js"></script>
