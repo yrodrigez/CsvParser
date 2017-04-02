@@ -18,8 +18,11 @@ function handleFileSelect(evt) {
     };
 
     reader.onload = function () {
+        progressBar.activate();
         try{
-            var csvObject = new CSVStringToObject(reader.result);
+            var csvObject = new CSVStringToObject(reader.result, function (progress) {
+                progressBar.updateProgress(progress);
+            });
         } catch (ex){
             alert(ex);
         }

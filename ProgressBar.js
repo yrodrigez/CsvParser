@@ -1,7 +1,7 @@
 var ProgressBar = function (id) {
     this.id = ((id === undefined) ? 'accis-file-load-progress-bar' : id);
     this.cssId = '#' + this.id;
-    this.skin = '<div id="' + this.id + '" class="finished"></div>';
+    this.skin = '<div id="' + this.id + '" class="inactive"></div>';
     this.element = document.getElementById(this.id);
 
     var mElement = this.element;
