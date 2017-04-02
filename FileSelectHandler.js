@@ -4,7 +4,9 @@ function handleFileSelect(evt) {
 
     const progressBar = new ProgressBar('accis-file-load-progress-bar');
     try{
-        document.getElementById('accis-file-drop-container').removeChild(progressBar.element);
+        document.getElementById('accis-file-drop-container').removeChild(
+            document.getElementById(progressBar.id)
+        );
     }catch (ex){
         // do nothing
     }
@@ -36,17 +38,20 @@ function handleFileSelect(evt) {
         progressBar.updateProgress(10);
         function callBack() {
             progressBar.deactivate();
-            progressBar.updateProgress(100);
+            //progressBar.updateProgress(100);
             showMessage('file parsed!');
         }
         function progressHandler(progress) {
             progressBar.updateProgress(progress);
         }
-        try{
-            new CSVStringToObject(reader.result, progressHandler, callBack);
-        } catch (ex){
-            alert(ex);
+
+        function onErr(err) {
+            alert(err)
         }
+           let csv = new CSVStringToObject(reader.result, progressHandler, callBack, onErr);
+           console.log(csv);
+
+
 
     };
     reader.readAsText(file)
