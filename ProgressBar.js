@@ -1,26 +1,27 @@
-var ProgressBar = {
-  id: 'accis-file-load-progress-bar',
-  cssId: '#'+this.id,
-  skin: '<div id="'+ this.id +'" class="finished"></div>',
+var ProgressBar = function (id) {
+  this.id = ((id === undefined) ? 'accis-file-load-progress-bar' : id);
+  this.cssId = '#'+this.id;
+  this.skin = '<div id="'+ this.id +'" class="finished"></div>';
+  this.element = document.getElementById(this.id);
 
-  updateProgress : function (progress) {
-      var mProgressBar = document.getElementById(this.id);
-      mProgressBar.style.width = progress + '%';
-      mProgressBar.style.marginTop = '.5em';
-      if(progress === 0) mProgressBar.style.marginTop = '0';
-  },
+  var mElement = this.element;
+  this.updateProgress = function (progress) {
+      if(progress === 0) mElement.style.marginTop = '0';
+      else {
+          mElement.style.width = progress + '%';
+          mElement.style.marginTop = '.5em';
+      }
+  };
 
-  isActive: function () {
-      return document.getElementById(this.id).className.match(/(\\s*|^)active(\\s*|$)/);
-  },
+  this.isActive = function () {
+      return mElement.className.match(/(\\s*|^)active(\\s*|$)/);
+  };
 
-  activate: function () {
-    var className = document.getElementById('accis-file-load-progress-bar').className;
-    document.getElementById('accis-file-load-progress-bar').className = className.replace(/(\\s*|^)inactive(\\s*|$)/, 'active');
-  },
+  this.activate = function () {
+    mElement.className = mElement.className.replace(/(\\s*|^)inactive(\\s*|$)/, 'active');
+  };
 
-  deactivate: function () {
-      var className = document.getElementById('accis-file-load-progress-bar').className;
-      document.getElementById('accis-file-load-progress-bar').className = className.replace(/(\\s*|^)active(\\s*|$)/, 'inactive');
-  }
+  this.deactivate =  function () {
+      mElement.className = mElement.className.replace(/(\\s*|^)active(\\s*|$)/, 'inactive');
+  };
 };
