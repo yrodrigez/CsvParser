@@ -17,9 +17,10 @@
 <body>
     <div class="container-fluid">
         <div id="accis-file-drop-container" class="col-xs-6 col-xs-offset-3">
-            <div id="accis-file-drop-area" onclick="jQuery('input').click();" ondragover="handleDragOver(event)" ondrop="handleFileSelect(event)" >
-                Drop csv file here
+            <div id="accis-file-drop-area" onclick="jQuery('input').click();" ondragover="handleDragOver(event)" ondrop="event.preventDefault(); $('input-file').prop('files', event.dataTransfer.files)" >
+                Drop csv file her
             </div>
+            <input id="input-file" type="file" onchange="console.log(this.value);handleFileSelect(event)"  hidden>
         </div>
     </div>
 </body>

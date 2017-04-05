@@ -1,6 +1,7 @@
 function handleFileSelect(evt) {
     evt.stopPropagation();
     evt.preventDefault();
+    console.log(evt);
 
     const progressBar = new ProgressBar('accis-file-load-progress-bar');
     try{

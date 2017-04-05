@@ -9,10 +9,25 @@
     border: 1px solid lightgray;
 }
 
+
 input[type=file] {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+input[type=file] + label {
     padding: 25px;
     border: 2px dashed darkslategray;
     text-align: center;
+}
+
+input[type=file]:focus + label,
+input[type=file] + label:hover {
+    background-color: red;
 }
 
 #spinner {
